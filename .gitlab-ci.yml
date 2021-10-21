@@ -1,0 +1,60 @@
+
+#.gitlab-ci.yml file test
+stages:
+    - mavenbuild
+    - maventest
+    - deploy 
+    - androidbuild 
+    - androidtest
+maven-build:
+    stage: mavenbuild
+    tags:
+       - springboot_tag
+    script:
+       - cd Backend/cychat
+       - mvn package -B
+maven-test:
+     stage: maventest
+     tags:
+       - springboot_tag
+     script:
+       - cd Backend/cychat
+       - mvn test
+     artifacts:
+         paths:
+             - Backend/cychat/target/*.jar
+autoDeploy:
+    stage: deploy
+    tags:
+      - springboot_tag
+    script:
+      - cd Backend/cychat
+      - mvn package
+      - sudo mv target/*.jar /var/www/html/target/web-demo.jar
+      - sudo systemctl stop backend
+      - sudo systemctl start backend 
+android-build:
+  image: javiersantos/android-ci:latest
+  stage: androidbuild
+  tags:
+   - android_tag
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./Frontend/Cychat/gradlew
+  script:
+    - cd Frontend/Cychat
+    - ./gradlew build
+  artifacts:
+    paths:
+    - Android_test/app/build/outputs/
+android-test:
+  image: javiersantos/android-ci:latest
+  stage: androidtest
+  tags:
+   - android_tag
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./Frontend/Cychat/gradlew
+  script:
+    - cd Frontend/Cychat
+    - ./gradlew test

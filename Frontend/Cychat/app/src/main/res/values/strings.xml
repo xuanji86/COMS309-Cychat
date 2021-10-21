@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CyChat</string>
+    <string name="login_icon">ISU_icon</string>
+    <string name="password_msg">Password</string>
+    <string name="signup_button">sign up</string>
+    <string name="signin_button">sign in</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="your_isu_email">Your ISU Email</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="reenter_password">Reenter Password</string>
+    <string name="username_isu_email">Username(ISU Email)</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="version">0.1beta</string>
+    <string name="friend_request">Friend Request</string>
+    <string name="add_friends">Add Friends</string>
+    <string name="please_enter_isu_email">Please enter ISU Email</string>
+    <string name="refresh_friend_request">Refresh Friend request</string>
+    <string name="delete">delete</string>
+    <string name="image_profile">Image_profile</string>
+    <string name="rename">rename</string>
+    <string name="chat">chat</string>
+    <string name="fullname">fullname</string>
+    <string name="refresh">Refresh</string>
+    <string name="name">name</string>
+    <string name="email">email</string>
+    <string name="accept">accept</string>
+
+</resources>
